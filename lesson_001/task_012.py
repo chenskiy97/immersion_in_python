@@ -8,12 +8,15 @@ num = randint(LOWER_LIMIT, UPPER_LIMIT)
 
 from random import randint
 
+LOWER_LIMIT = 0
+UPPER_LIMIT = 1000
+
 
 def ran(num: int) -> str:
     count = 1
     while count <= 10:
-        a = int(input(f'Попытка: {count}/10. Введите число от 0 до 1000: '))
-        if 0 > a > 1000:
+        a = int(input(f'Попытка: {count}/10. Введите число от {LOWER_LIMIT} до {UPPER_LIMIT}: '))
+        if LOWER_LIMIT > a > UPPER_LIMIT:
             return f'Поражение! (Надо было от 0 до 1000)'
         elif a == num:
             return f'Победа! (Количество попыток: {count})'
@@ -25,4 +28,4 @@ def ran(num: int) -> str:
     return f'Поражение! (Закончились попытки, было загадано {num})'
 
 
-print(ran(randint(0, 1000)))
+print(ran(randint(LOWER_LIMIT, UPPER_LIMIT)))
