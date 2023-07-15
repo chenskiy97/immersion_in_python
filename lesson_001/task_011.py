@@ -4,18 +4,16 @@
 и на себя». Сделайте ограничение на ввод отрицательных чисел и чисел больше 100 тысяч.
 '''
 
+MIN_RANGE = 0
+MAX_RANGE = 100_000
 
-def simple_composite(num):
-    if num < 0 or num >= 100000:
+
+def simple_composite(num: int) -> str:
+    if num < MIN_RANGE or num >= MAX_RANGE:
         return 'число введено неверно'
-    k = 0
-    for i in range(2, num // 2 + 1):
-        if num % i == 0:
-            k = k + 1
-    return 'простое' if k <= 0 else 'составное'
-    # for i in range(2, num // 2 + 1):
-    #     return 'составное' if num % i == 0 else 'простое'
+    for i in range(2, num // 2 + 1, 2):
+        return 'составное' if num % i == 0 else 'простое'
+    return 'простое'
 
 
-
-print(simple_composite(4))
+print(simple_composite(10))

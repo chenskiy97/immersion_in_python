@@ -7,14 +7,29 @@
 '''
 
 
-def triangle(a, b, c):
-    if a < b + c and b < a + c and c < a + b:
-        if a != b != c != a:
-            return 'разносторонний'
-        if (a != b == c != a) or (a != b != c == a) or (a == b != c != a):
-            return 'равнобедренный'
-        if (a == b == c == a):
-            return 'равносторонний'
-    else: return 'треугольника с такими сторонами не существует'
+# def triangle(a: int, b: int, c: int) -> str:
+#     if a < b + c and b < a + c and c < a + b:
+#         if a != b != c != a:
+#             return 'Треугольник разносторонний'
+#         if (a != b == c != a) or (a != b != c == a) or (a == b != c != a):
+#             return 'Треугольник равнобедренный'
+#         if a == b == c == a:
+#             return 'Треугольник равносторонний'
+#     else:
+#         return 'Треугольника с заданными сторонами существовать не может!'
+#
+#
+# print(triangle(10, 2, 2))
 
-print(triangle(10, 2, 2))
+def triangle(a: int, b: int, c: int) -> str:
+    if a > b + c or b > a + c or c > a + b:
+        return 'Треугольника с заданными сторонами существовать не может!'
+    elif a != b != c != a:
+        return 'Треугольник разносторонний'
+    elif (a != b == c != a) or (a != b != c == a) or (a == b != c != a):
+        return 'Треугольник равнобедренный'
+    else:
+        return 'Треугольник равносторонний'
+
+
+print(triangle(2, 3, 2))
