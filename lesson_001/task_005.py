@@ -3,5 +3,3 @@ def solution(n, e):
 
 
 print(solution(20, 3))
-
-# Решал на codewars похожее когда-то :))
