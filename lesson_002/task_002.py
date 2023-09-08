@@ -6,25 +6,20 @@
 ✔ адрес в памяти
 ✔ размер в памяти
 ✔ хэш объекта
-✔ результат проверки на целое число только если он положительный
-✔ результат проверки на строку только если он положительный
+✔ результат проверки на целое число только if он положительный
+✔ результат проверки на строку только if он положительный
 Добавьте в список повторяющиеся элементы и сравните на результаты.
 '''
-import sys
+data = [1, 4.5, 'stringg', 1, 4.5, True, True, 'sstringg']
 
-data = [5, 23.24, 'hello', True, [2, 4, 1, 'asdw']]
-
-for i, item in enumerate(data, start=1):
-    print(f'{i} значение {item}, '
-          f'id: {id(item)}, '
-          f'size: {sys.getsizeof(item)}')
-    if isinstance(item, int) and item > 0:
-        print('результат проверки на целое число только если он положительный')
-    elif isinstance(item,str):
-        print('результат проверки на строку только если он положительный')
-    try:
-        print(f'hash: {hash(item)}')
-    except:
-        pass
-
-    # print(i, data[i], id(data[i]))
+for i in range(len(data)):
+    print(f'Порядковый номер: {i + 1}')
+    print(f'Значение: {data[i]}')
+    print(f'Адрес памяти: {id(data[i])}')
+    print(f'Размер: {data[i].__sizeof__()}')
+    print(f'Хэш: {hash(data[i])}')
+    if isinstance(data[i], int | float):
+        print(f'Это число')
+    if isinstance(data[i], str):
+        print(f'Это строка')
+    print('- ' * 20)
