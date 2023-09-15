@@ -21,4 +21,5 @@ print(list_app([1, 2, 1, 3, 4, 4, 5, 0]))
 def li_set(li):
     return set(li)
 
-print(li_set([0,1,0,1,2,3,2,4,3]))
+
+print(li_set([0, 1, 0, 1, 2, 3, 2, 4, 3]))
