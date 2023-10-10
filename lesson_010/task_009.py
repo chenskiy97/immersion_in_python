@@ -16,6 +16,5 @@ class Triangle:
             return 'Треугольник равносторонний'
 
 
-# Определить и вывести тип треугольника
 t = Triangle(2, 3, 2)
 print(t.type_of_triangle())
